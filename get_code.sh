@@ -2,7 +2,7 @@
 
 CLIENT_ID="<your-client-id>"
 CLIENT_SECRET="<your-client-secret>"
-echo "Please visit this url and provide the authorization code: https://accounts.google.com/o/oauth2/auth?hl=en&response_type=code&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2$
+echo "Please visit this url and provide the authorization code: https://accounts.google.com/o/oauth2/auth?hl=en&response_type=code&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.upload&access_type=offline&client_id=${CLIENT_ID}"
 read -e -p "Your authorization code: " AUTHORIZATION_CODE
 REFRESH_TOKEN_RESPONSE=$(curl -s --location --request POST 'https://oauth2.googleapis.com/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
